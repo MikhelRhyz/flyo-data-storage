@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+body {
+  background-image: url(images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center calc(100% + 3rem); /* Adjust the 3rem value as needed */
+  height: 100vh;
+  background-color: var(--Very-Dark-Blue);
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  height: 100%;
+}
+
+.main {
+  max-width: 900px;
+  width: 100%; /* Ensure it uses the full available width up to max-width */
+  margin: 0 auto; /* Center it within the parent container */
+}
+
+.fylo-col {
+  background-color: var(--Dark-Blue);
+  padding: 2rem;
+  border-radius: 1rem 4rem 1rem 10px;
+}
+
+.fylo-main {
+  width: 60%;
+}
+
+.fylo-img {
+  width: 85%;
+  margin-bottom: 1.5rem;
+}
+
+.icons {
+  min-width: 205px;
+}
+
+.icons .col {
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--Very-Dark-Blue);
+  padding: 15px 15px;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.storage-col {
+  background-color: var(--Dark-Blue);
+  margin-left: 1.5rem;
+  height: fit-content;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--Pale-Blue);
+  font-size: 13px;
+}
+
+.storage-container {
+  position: relative;
+}
+
+.storage-col p span {
+  color: white;
+  font-weight: 600;
+}
+
+.progress {
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 1rem;
+}
+
+.progress-bar-gradient {
+  background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 0.25rem;
+  position: relative;
+  margin: 3px;
+}
+
+.progress-bar-gradient::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.gb-left-container {
+  position: absolute;
+  top: -100%;
+  right: 0;
+}
+
+.gb-left {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--Grayish-Blue);
+  font-weight: 600;
+}
+
+.gb-left p {
+  margin: 0;
+}
+
+.gb-left p span {
+  color: black;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-right: 30px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-position: center calc(100% + 0rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+  }
+
+  .storage-col {
+    margin: 0;
+    margin-top: 1.5rem;
+  }
+
+  .triangle-left {
+    display: none;
+  }
+
+  .gb-left-container {
+    top: +100%;
+    right: 50%;
+    bottom: -100%;
+    width: 15rem;
+    transform: translateX(+50%);
+  }
+
+  .gb-left {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main .row {
+    margin: 0 1rem;
+  }
+
+  .gb-left p span {
+    font-weight: 700;
+  }
+
+  .icons .col {
+    border-radius: 10px;
+  }
+
+  .fylo-main {
+    width: 95%;
+  }
+
+  .fylo-main .row {
+    margin: 0;
+  }
+
+  .fylo-img {
+    width: 70%;
+    padding: 0;
+  }
+
+  .gb-left-container {
+    top: +100%;
+    right: 50%;
+    bottom: -100%;
+    width: 11rem;
+    transform: translateX(+50%);
+  }
+}
